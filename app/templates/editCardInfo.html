@@ -1,0 +1,67 @@
+<form name="card_info" class="for_all_forms" ng-submit="updateCard(currentInfo);" method="POST">
+	 <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text"
+           name="cardTitle"
+           class="form-control"
+           placeholder="My new card"
+           maxlength="100"
+           ng-model="currentInfo.title"
+           value="{{currentUnfo.title}}" 
+           required />
+    </div>
+
+    <!-- ERRORS_TITLE -->
+    <div class="form-group">
+    	<p class="text-danger" ng-show="card_info.cardTitle.$invalid && card_info.cardTitle.$dirty">Title field is Empty!</p>
+  	</div>
+
+  	<div class="form-group">
+      <label for="description">Description</label>
+      <input type="text"
+           name="cardDescription"
+           class="form-control"
+           placeholder="I'm superhero!"
+           ng-model="currentInfo.description" 
+           value="{{currentInfo.description}}" 
+           required />
+    </div>
+
+    <!-- ERRORS_DESCRIPTION -->
+    <div class="form-group">
+    	<p class="text-danger" ng-show="card_info.cardDescription.$invalid && card_info.cardDescription.$dirty">Description field is Empty!</p>
+  	</div>
+
+  	<div class="form-group" >
+	    <label for="Category">Category</label>
+	    </br>
+	    <select name="cardCategory" ng-model="currentInfo.category_id" required>
+	      <option value="">-- Select category --</option>
+	      <option ng-repeat="category in categories" value="{{category.id}}"> {{category.name}} </option>
+	    </select>
+	</div>
+
+    <!-- ERRORS_CATEGORY -->
+    <div class="form-group">
+    	<p class="text-danger" ng-show="card_info.cardCategory.$invalid && card_info.cardCategory.$dirty">Category field is Empty!</p>
+  	</div>
+
+  	<div class="form-group" >
+	    <label for="Priority">Priority</label>
+	    </br>
+	    <select name="cardPriority" ng-model="currentInfo.priority_id" required>
+	      <option value="">-- Select category --</option>
+	      <option ng-repeat="priority in priorities" value="{{priority.id}}"> {{priority.name}} </option>
+	    </select>
+	</div>
+
+    <!-- ERRORS_PRIORITY -->
+    <div class="form-group">
+    	<p class="text-danger" ng-show="card_info.cardPriority.$invalid && card_info.cardPriority.$dirty">Priority field is Empty!</p>
+  	</div>
+
+  <div class="modal-footer form-group">
+    <p align="left" class="advice"><em>To update info, please fill in all fields.</em></p>
+    <button class="btn btn-primary" ng-disabled="card_info.$invalid" ng-click="updateMsg(currentUser.id)">Update</button>
+  </div>
+</form>

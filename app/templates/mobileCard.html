@@ -1,0 +1,33 @@
+<div class="col-lg-3 col-mg-3 col-sm-4 col-xs-12" ng-repeat="card in cards | filter:search_query">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h3>{{card.title}}</h3>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <div class="description">
+            <p>{{card.description}}</p>
+          </div>
+          <hr>
+          <p class="hide">{{category_id}}</p>
+          <h6>{{card.category_name}}</h6>
+          <hr>
+          <div class="row">
+            <div class="col-xs-6" align="left">
+              <p class="hide">{{priority_id}}</p>
+              <b>{{card.priority_name}}</b>
+            </div>
+            <div class="col-xs-6" align="right">
+              <data>{{card.date}}</data>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

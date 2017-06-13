@@ -1,0 +1,160 @@
+@font-face {
+  font-family: Roboto Bold;
+  src: url("../../app/font/RobotoTTF/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: Roboto Medium;
+  src: url("../../app/font/RobotoTTF/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: Roboto Light;
+  src: url("../../app/font/RobotoTTF/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: ../app/Roboto Thin;
+  src: url("../font/RobotoTTF/Roboto-Thin.ttf");
+}
+
+@font-face {
+  font-family: Roboto ThinItalic;
+  src: url("../../app/font/RobotoTTF/Roboto-ThinItalic.ttf");
+}
+
+body {
+  background-image: url("../../app/images/wallpaper.png");
+  background-size: cover;
+}
+
+.container-fluid {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+a {
+  outline: 0 !important;
+}
+
+.navbar {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-bottom: 15px;
+  padding: 0 15px 0 15px;
+}
+
+.input_search {
+  width: 380px !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .input_search {
+    width: 100% !important;
+    margin-right: 10px !important;
+  }
+}
+
+.card {
+  color: #111;
+  background-color: rgba(244, 188, 66, 0.9);
+  height: 300px;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+  padding: 10px 10px 0 10px;
+  margin-bottom: 20px;
+}
+
+.card hr {
+  margin: 0 0px 10px 0px !important;
+}
+
+.title {
+  margin-top: -20px;
+  max-height: 60px;
+}
+
+.description {
+  height: 165px;
+}
+
+.card h3 {
+  font-family: "Roboto Bold", serif;
+  font-size: 24pt;
+  overflow: hidden;
+  color: rgba(61, 47, 16, 0.9);
+  height: 38px;
+}
+
+.card p {
+  font-family: "Roboto ThinItalic", serif;
+  font-size: 10.5pt;
+  overflow: hidden;
+  height: 160px;
+}
+
+.card h6 {
+  /*font-family: "Roboto ThinItalic", serif;*/
+  /*font-size: 10.5pt;*/
+  overflow: hidden;
+  height: 15px;
+  /*width: 345px;*/
+}
+
+.card data {
+  font-weight: bold;
+}
+
+.for_all_forms {
+  padding: 10px;
+}
+
+.success {
+  background-color: #5BB85C;
+  color: #fff;
+}
+
+.warning {
+  background-color: #F0AD4E;
+  color: #fff;
+}
+
+.danger {
+  background-color: #D9544F;
+  color: #fff;
+}
+
+.circle {
+  height: 65px;
+  width: 65px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-color: #5BB85C;
+  color: #fff;
+  font-size: 25px;
+  padding: 15px 12px 10px 15px;
+  text-align: center;
+}
+
+.edit {
+  color: #111;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .card {
+    height: 125px;
+  }
+  .card p {
+    height: 0px;
+  }
+  .description {
+    height: 0px;
+  }
+  .desc {
+    display: none;
+  }
+}

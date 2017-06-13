@@ -1,0 +1,56 @@
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">ToDo</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!-- Category -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ng-repeat-start="category in categories">
+              <a href="#">{{category.name}} <span class="badge">14</span></a>
+            </li>
+            <li ng-repeat-end></li>
+            <li>
+              <a href="#">Add new category</a>
+            </li>
+          </ul>
+        </li>
+        <!-- Priority -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Priority<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="priority" ng-repeat-start="priority in priorities">
+              <a href="#">{{priority.name}}</a>
+            </li>
+            <li ng-repeat-end></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <form class="navbar-form navbar-left col-xs-12 search">
+        <div class="form-group">
+          <input type="text" class="form-control input_search" placeholder="Search your card..." ng-model="search_query">
+        </div>
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="" data-toggle="modal" data-target="#logOut">Hello User</a>
+        </li> 
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
