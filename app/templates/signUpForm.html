@@ -1,0 +1,78 @@
+<div class="container-fluid" id="signUpForm">
+    <div class="container c_main">
+        <section class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+            <form name="singUpForm" method="POST" ng-controller="SingUpController" ng-submit="addNewUser(userInfo);">
+
+                <div class="form-group">
+                <!-- <label for="Name">Name</label> -->
+                <input
+                        type="name"
+                        name="userName"
+                        class="form-control"
+                        placeholder="Alex"
+                        ng-model="userInfo.userName"
+                        maxlength="50"
+                        required />
+                </div>
+                
+                <div class="form-group">
+                    <p class="text-danger" ng-show="singUpForm.userName.$invalid && singUpForm.userName.$dirty">Name field is empty!</p>
+                </div>
+
+                <div class="form-group">
+                <!-- <label for="Surname">Surname</label> -->
+                <input
+                        type="surname"
+                        name="userSurname"
+                        class="form-control"
+                        placeholder="Holder"
+                        ng-model="userInfo.userSurname"
+                        maxlength="30"
+                        required />
+                </div>
+                
+                <div class="form-group">
+                    <p class="text-danger" ng-show="singUpForm.userSurname.$invalid && singUpForm.userSurname.$dirty">Surname field is empty!</p>
+                </div>
+
+                <div class="form-group">
+                <!-- <label for="Email">Email</label> -->
+                <input
+                        type="email"
+                        name="userEmail"
+                        class="form-control"
+                        placeholder="alex@gmail.com"
+                        ng-model="userInfo.userEmail"
+                        maxlength="30"
+                        required />
+                </div>
+                
+                <div class="form-group">
+                    <p class="text-danger" ng-show="singUpForm.userEmail.$invalid && singUpForm.userEmail.$dirty">Email field is empty!</p>
+                </div>
+                
+                <div class="form-group">
+                <!-- <label for="Password">Password</label> -->
+                <input
+                        type="password"
+                        name="userPass"
+                        class="form-control"
+                        placeholder="Password"
+                        ng-model="userInfo.userPass"
+                        maxlength="30"
+                        required />
+                </div>
+                
+                <div class="form-group">
+                    <p class="text-danger" ng-show="singUpForm.userPass.$invalid && singUpForm.userPass.$dirty">Password field is empty!</p>
+                </div>
+
+                <div class="modal-footer">
+                    <p align="left" id="error" style="color: red;"></p>                 
+                    <button class="btn btn-primary" ng-disabled="singUpForm.$invalid">Sign up</button>
+                    <p id="signUp-logIn">or <a href="#/LogIn">Log in</a></p>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

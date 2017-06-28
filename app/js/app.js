@@ -1,11 +1,73 @@
 // Application module
 (function () {
 
-	var app = angular.module('ToDoApp', []);
+	var app = angular.module('ToDoApp', ['ngRoute']);
 
+	app.config(function ($routeProvider) {
+		$routeProvider
+
+		.when('/', {
+			templateUrl: '../../app/templates/loginForm.html'
+		})
+
+		.when('/LogIn', {
+			templateUrl: '../../app/templates/loginForm.html'
+		})
+
+		.when('/SignUp', {
+			templateUrl: '../../app/templates/signUpForm.html'
+		});
+
+	});
 
 	//===========================================
 	//================= LOGIC ===================
+	
+	
+	app.controller("LoginController",['$scope','$http', function($scope,$http){
+	
+	// Check User
+	$scope.checkUser = function(info){
+		$http.post('../../app/php/checkUser.php',{
+
+			"email":info.mEmail,
+			"password":info.mPass
+
+			}).success(function(data){
+			if (data === 'true') {
+				document.location.href="../../main.php";
+				console.log(data);
+			}else{
+				$('#error').text('Sorry! Your password or email is incorrect! Try again.');
+			}
+		});
+	};
+
+	}]);
+
+	app.controller("SingUpController",['$scope','$http', function($scope,$http){
+	
+	// Add new user to system
+	$scope.addNewUser = function(info){
+		$http.post('../../app/php/addNewUser.php',{
+
+			"name":info.userName,
+			"surname":info.userSurname,
+			"email":info.userEmail,
+			"password":info.userPass
+
+			}).success(function(data){
+			if (data === 'true') {
+				document.location.href="../../main.php";
+				console.log(data);
+			}else{
+				console.log(data);
+				$('#error').text('Sorry! Sorry, this email already in system! Try again.');
+			}
+		});
+	};
+
+	}]);
 
 	app.controller("MainController",['$scope','$http', function($scope,$http){
 

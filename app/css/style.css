@@ -1,30 +1,30 @@
 @font-face {
   font-family: Roboto Bold;
-  src: url("../../app/font/RobotoTTF/Roboto-Bold.ttf");
+  src: url("/app/font/RobotoTTF/Roboto-Bold.ttf");
 }
 
 @font-face {
   font-family: Roboto Medium;
-  src: url("../../app/font/RobotoTTF/Roboto-Medium.ttf");
+  src: url("/app/font/RobotoTTF/Roboto-Medium.ttf");
 }
 
 @font-face {
   font-family: Roboto Light;
-  src: url("../../app/font/RobotoTTF/Roboto-Light.ttf");
+  src: url("/app/font/RobotoTTF/Roboto-Light.ttf");
 }
 
 @font-face {
-  font-family: ../app/Roboto Thin;
-  src: url("../font/RobotoTTF/Roboto-Thin.ttf");
+  font-family: Roboto Thin;
+  src: url("/app/font/RobotoTTF/Roboto-Thin.ttf");
 }
 
 @font-face {
   font-family: Roboto ThinItalic;
-  src: url("../../app/font/RobotoTTF/Roboto-ThinItalic.ttf");
+  src: url("/app/font/RobotoTTF/Roboto-ThinItalic.ttf");
 }
 
 body {
-  background-image: url("../../app/images/wallpaper.png");
+  background-image: url("/app/images/wallpaper.png");
   background-size: cover;
 }
 

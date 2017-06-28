@@ -1,0 +1,46 @@
+<div class="container-fluid" id="loginForm">
+    <div class="container c_main">
+        <section class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+            <form name="loginForm" method="POST" ng-controller="LoginController" ng-submit="checkUser(userInfo);">
+
+                <div class="form-group">
+                <!-- <label for="Name">Email</label> -->
+                <input
+                        type="email"
+                        name="memEmail"
+                        class="form-control"
+                        placeholder="alex@gmail.com"
+                        ng-model="userInfo.mEmail"
+                        maxlength="30"
+                        required />
+                </div>
+                
+                <div class="form-group">
+                    <p class="text-danger" ng-show="loginForm.memEmail.$invalid && loginForm.memEmail.$dirty">Email field is empty!</p>
+                </div>
+                
+                <div class="form-group">
+                <!-- <label for="Name">Password</label> -->
+                <input
+                        type="password"
+                        name="mPass"
+                        class="form-control"
+                        placeholder="Password"
+                        ng-model="userInfo.mPass"
+                        maxlength="30"
+                        required />
+                </div>
+                
+                <div class="form-group">
+                    <p class="text-danger" ng-show="loginForm.mPass.$invalid && loginForm.mPass.$dirty">Password field is empty!</p>
+                </div>
+
+                <div class="modal-footer">
+                    <p align="left" id="error" style="color: red;"></p>                 
+                    <button class="btn btn-primary" ng-disabled="loginForm.$invalid">Log in</button>
+                    <p id="signUp-logIn">or <a href="#/SignUp">Sign up</a></p>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
