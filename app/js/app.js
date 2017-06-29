@@ -25,7 +25,8 @@
 	
 	
 	app.controller("LoginController",['$scope','$http', function($scope,$http){
-	
+
+
 	// Check User
 	$scope.checkUser = function(info){
 		$http.post('../../app/php/checkUser.php',{
@@ -47,9 +48,29 @@
 
 	app.controller("SingUpController",['$scope','$http', function($scope,$http){
 	
-	// Add new user to system
+
 	$scope.addNewUser = function(info){
-		$http.post('../../app/php/addNewUser.php',{
+		var reName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/;
+		var	reSurname = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/;
+		var	reEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+		$scope.name = info.userName;
+		$scope.surname = info.userSurname;
+		$scope.email = info.userEmail;
+
+		var validName = reName.test($scope.name);
+		var validSurname = reSurname.test($scope.surname);
+		var validEmail = reEmail.test($scope.email);
+
+		if(!validName){
+			console.log("not valid name");
+		}else if (!validSurname){
+			console.log("not valid surname");
+		}else if(!validEmail){
+			console.log("not valid email");
+		}else{
+			console.log("success");
+			$http.post('../../app/php/addNewUser.php',{
 
 			"name":info.userName,
 			"surname":info.userSurname,
@@ -59,13 +80,34 @@
 			}).success(function(data){
 			if (data === 'true') {
 				document.location.href="../../main.php";
-				console.log(data);
+				// console.log(data + " " + );
 			}else{
-				console.log(data);
+				console.log($scope.email);
 				$('#error').text('Sorry! Sorry, this email already in system! Try again.');
 			}
 		});
+		}
 	};
+
+	// Add new user to system
+	// $scope.addNewUser = function(info){
+	// 	$http.post('../../app/php/addNewUser.php',{
+
+	// 		"name":info.userName,
+	// 		"surname":info.userSurname,
+	// 		"email":info.userEmail,
+	// 		"password":info.userPass
+
+	// 		}).success(function(data){
+	// 		if (data === 'true') {
+	// 			document.location.href="../../main.php";
+	// 			console.log(data);
+	// 		}else{
+	// 			console.log(data);
+	// 			$('#error').text('Sorry! Sorry, this email already in system! Try again.');
+	// 		}
+	// 	});
+	// };
 
 	}]);
 

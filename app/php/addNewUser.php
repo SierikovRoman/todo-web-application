@@ -61,11 +61,13 @@ if ($member == null) {
 	// } else {
 	//     echo 'Message has been sent';
 	// }
+	
+	$query = pg_query("SELECT * FROM public.user WHERE email = '$email' ");
+	$user = pg_fetch_array($query);
+	$_SESSION['id']=$user['id'];
 
 }elseif ($member !== null) {
 	echo "error:_mail_is_already_exist_in_system";
 }
 
-
-$_SESSION['id']=$member['id'];
 ?>

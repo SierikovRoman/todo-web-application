@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  $id = $_SESSION['id'];
+  // print_r($id);
+
+  if($id == null){
+    header("Location: index.php");
+    exit;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en" ng-app="ToDoApp">
 <head>
