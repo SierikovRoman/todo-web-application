@@ -17279,14 +17279,14 @@ var DATE_FORMATS_SPLIT = /((?:[^yMdHhmsaZEwG']+)|(?:'(?:[^']|'')*')|(?:E+|y+|M+|
           <span>{{'1288323623006' | date:"MM/dd/yyyy 'at' h:mma"}}</span><br>
      </file>
      <file name="protractor.js" type="protractor">
-       it('should format date', function() {
-         expect(element(by.binding("1288323623006 | date:'medium'")).getText()).
+       it(date, function() {
+         expect(element(by.binding(date)).getText()).
             toMatch(/Oct 2\d, 2010 \d{1,2}:\d{2}:\d{2} (AM|PM)/);
-         expect(element(by.binding("1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'")).getText()).
+         expect(element(by.binding(date)).getText()).
             toMatch(/2010\-10\-2\d \d{2}:\d{2}:\d{2} (\-|\+)?\d{4}/);
-         expect(element(by.binding("'1288323623006' | date:'MM/dd/yyyy @ h:mma'")).getText()).
+         expect(element(by.binding(date)).getText()).
             toMatch(/10\/2\d\/2010 @ \d{1,2}:\d{2}(AM|PM)/);
-         expect(element(by.binding("'1288323623006' | date:\"MM/dd/yyyy 'at' h:mma\"")).getText()).
+         expect(element(by.binding(date)).getText()).
             toMatch(/10\/2\d\/2010 at \d{1,2}:\d{2}(AM|PM)/);
        });
      </file>
@@ -19217,7 +19217,7 @@ var inputType = {
       </form>
     </file>
     <file name="protractor.js" type="protractor">
-      var value = element(by.binding('example.value | date: "yyyy-Www"'));
+      var value = element(by.binding(date));
       var valid = element(by.binding('myForm.input.$valid'));
       var input = element(by.model('example.value'));
 

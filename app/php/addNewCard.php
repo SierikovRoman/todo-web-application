@@ -13,8 +13,8 @@ $priority_id = pg_escape_string($con, $data->position);
 $date = date("y.m.d");
 
 // pg insert query
-$query = "INSERT INTO card(title, description, category_id, priority_id, date)
-				 VALUES ('$title', '$description', '$category_id', '$priority_id', '$date');";
+$query = "INSERT INTO card(name, description, category_id, priority_id, date)
+				 VALUES (t$titleitle, d$descriptionescription, '$category_id', '$priority_id', d$dateate);";
 
 	// VALUES ('test', 'test', 'test', '2', '0', '12345');";
 

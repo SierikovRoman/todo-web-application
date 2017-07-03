@@ -48,7 +48,7 @@
 
 	app.controller("SingUpController",['$scope','$http', function($scope,$http){
 	
-
+	// Add new user to system
 	$scope.addNewUser = function(info){
 		var reName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/;
 		var	reSurname = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/;
@@ -89,29 +89,36 @@
 		}
 	};
 
-	// Add new user to system
-	// $scope.addNewUser = function(info){
-	// 	$http.post('../../app/php/addNewUser.php',{
+	}]);
 
-	// 		"name":info.userName,
-	// 		"surname":info.userSurname,
-	// 		"email":info.userEmail,
-	// 		"password":info.userPass
+	app.controller("NavbarController",['$scope','$http', function($scope,$http){
 
-	// 		}).success(function(data){
-	// 		if (data === 'true') {
-	// 			document.location.href="../../main.php";
-	// 			console.log(data);
-	// 		}else{
-	// 			console.log(data);
-	// 			$('#error').text('Sorry! Sorry, this email already in system! Try again.');
-	// 		}
-	// 	});
-	// };
+		$scope.openNav = function(){
+			document.getElementById("mySidenav").style.width = "250px";
+			document.getElementById("user").style.display = "none";
+		};
+
+		$scope.closeNav = function(){
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("user").style.display = "block";
+		};
+
+		/*For Mobile*/
+
+		$scope.openNavigation = function(){
+			document.getElementById("sidenav-mobile").style.width = "250px";
+			document.getElementById("user").style.display = "none";
+		};
+
+		$scope.closeNavigation = function(){
+			document.getElementById("sidenav-mobile").style.width = "0";
+			document.getElementById("user").style.display = "block";
+		};
 
 	}]);
 
 	app.controller("MainController",['$scope','$http', function($scope,$http){
+
 
 	getCards();
 	function getCards(){
@@ -199,8 +206,9 @@
 })();	
 
 
+var w = $(window).width();
 
-
+console.log(w);
 
 
 

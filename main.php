@@ -1,12 +1,11 @@
 <?php
-  session_start();
-  $id = $_SESSION['id'];
-  // print_r($id);
+  // session_start();
+  // $id = $_SESSION['id'];
 
-  if($id == null){
-    header("Location: index.php");
-    exit;
-  }
+  // if($id == null){
+  //   header("Location: index.php");
+  //   exit;
+  // }
 ?>
 
 <!DOCTYPE html>
@@ -16,42 +15,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>todo-web-application</title>
     <link rel="stylesheet" type="text/css" href="app/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="app/css/style.css">
 
     <script src="app/libs/jquery/dist/jquery.js"></script>
     <script src="app/libs/angular/angular.js"></script>
     <script src="app/libs/angular/angular-route.min.js"></script>
     <script src="app/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="app/js/app.js"></script>
-    <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    
+
     <!-- TODO add manifest here -->
-      <link rel="manifest" href="/manifest.json">
-      <!-- Add to home screen for Safari on iOS -->
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-mobile-web-app-status-bar-style" content="black">
-      <meta name="apple-mobile-web-app-title" content="Todo PWA">
-      <link rel="apple-touch-icon" href="app/images/icons/icon-152x152.png">
-      <meta name="msapplication-TileImage" content="app/images/icons/icon-144x144.png">
-      <meta name="msapplication-TileColor" content="#2F3BA2">
+      <!-- <link rel="manifest" href="/manifest.json"> -->
+    
+    <!-- Add to home screen for Safari on iOS -->
+<!--     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Todo PWA">
+    <link rel="apple-touch-icon" href="app/images/icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="app/images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2"> -->
 </head>
 <body>
 
-<div class="container-fluid" ng-controller="MainController">
-    
-    <ng-include src="'app/templates/navbar.html'"></ng-include>
-    <ng-include src="'app/templates/card.html'"></ng-include>
-    <ng-include src="'app/templates/logOut.html'"></ng-include>
-    <ng-include src="'app/templates/addNewCardCircle.html'"></ng-include>
-    <ng-include src="'app/templates/addNewCard.html'"></ng-include>
-    <ng-include src="'app/templates/success.html'"></ng-include>
-    <ng-include src="'app/templates/editCard.html'"></ng-include>
+<div class="container-fluid cf" ng-controller="MainController">
+      <ng-include src="'app/templates/navbar.html'"></ng-include>
+      <ng-include src="'app/templates/navbarMobile.html'"></ng-include>
+      <ng-include src="'app/templates/sideNav.html'"></ng-include>
+      <ng-include src="'app/templates/sideNavMobile.html'"></ng-include>
+      <ng-include src="'app/templates/todo-list.html'"></ng-include>
+      <ng-include src="'app/templates/todoMobileList.html'"></ng-include>
 
 </div>
 
+<script src="app/js/app.js" async></script>
+<script src="app/js/script.js"></script>
 </body>
 </html>
-
-
 
 
 

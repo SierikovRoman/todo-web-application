@@ -2,25 +2,8 @@
 
 require_once 'db_connection.php';
 
-
-//$query = "SELECT c.id, c.title, c.description, c.category_id, ct.name AS category_name, c.priority_id, pr.name AS priority_name, c.date FROM card AS c
-//		  LEFT JOIN category ct ON c.category_id = ct.id
-//		  LEFT JOIN priority pr ON c.priority_id = pr.id
-//		  ORDER BY c.id ASC";
-//
-//$result = mysqli_query($con, $query);
-//
-//$arr = array();
-//if(mysqli_num_rows($result) != 0) {
-//	while($row = mysqli_fetch_assoc($result)) {
-//			$arr[] = $row;
-//	}
-//}
-//
-//echo $json_info = json_encode($arr);
-
-$query = "SELECT c.id, c.title, c.description, c.category_id, ct.name AS category_name, c.priority_id, pr.name AS priority_name, c.date FROM card AS c
-		  LEFT JOIN category ct ON c.category_id = ct.id
+$query = "SELECT c.id, c.name, c.detail, c.list_id, ls.name AS list_name, c.priority_id, pr.name AS priority_name, c.date_created FROM card AS c
+		  LEFT JOIN list ls ON c.list_id = ls.id
 		  LEFT JOIN priority pr ON c.priority_id = pr.id
 		  ORDER BY c.id ASC";
 

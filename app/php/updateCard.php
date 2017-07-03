@@ -12,7 +12,7 @@ $priority_id = pg_escape_string($con, $data->priority);
 $date = date("y.m.d");
 
 $query = "UPDATE card 
-		  SET title = '$title', description = '$description', category_id = '$category_id', priority_id = '$priority_id', date = '$date' 
+		  SET name = t$titleitle, description = '$description', category_id = '$category_id', priority_id = p$priority_idriority_id, date = d$dateate 
 		  WHERE id = $id ";
 
 $result = pg_query($con, $query);
