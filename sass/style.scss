@@ -46,12 +46,12 @@ body{
 	overflow-y: scroll;  
 }
 
-// ul li {
-// 	list-style-type: none;
-// }
-
 .btn:focus {
 	outline: none $i;
+}
+
+.nav>li>a:hover, .nav>li>a:focus{
+	background-color: #111 $i;
 }
 
 .cf{
@@ -251,16 +251,18 @@ a {
     left: 0;
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: scroll; /* Anable vertical scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
 .sidenav-mobile a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 5px 6px 12px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
+    cursor: pointer;
     display: block;
     transition: 0.3s
 }
@@ -268,16 +270,93 @@ a {
 /* When you mouse over the navigation links, change their color */
 .sidenav-mobile a:hover, .offcanvas a:focus{
     color: #f1f1f1;
+    cursor: pointer;
 }
 
 /* Position and style the close button (top right corner) */
 .sidenav-mobile .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: 0;
     font-size: 36px;
-    margin-left: 50px;
+    // outline: 1px solid red $i;
 }
+
+.user-name{
+	position: absolute;
+    top: 20px;
+    left: 10px;
+    font-family: $roboto_m;
+	font-size: 18pt;
+	color: #FFF;
+	height: 27px;
+	width: 200px;
+	// outline: 1px solid red;
+}
+
+.user-email{
+	position: absolute;
+    top: 50px;
+    left: 10px;
+    font-family: $roboto_l;
+	font-size: 9pt;
+	color: #FFF;
+	height: 15px;
+	width: 200px;
+	// outline: 1px solid red;
+}
+
+/* Inside SidenavMobile */
+
+.nav>li>a{
+	padding: 10px 15px 10px 10px $i;
+}
+
+.dd{
+	width: 250px;
+	border-bottom: 1px solid #f1f1f1;
+	margin: 5px 0 0 0;
+}
+
+.gli{
+	font-size: 15px;
+}
+
+.caret{
+	text-align: right;
+	position: absolute;
+	top: 20px;
+	right: 10px;
+}
+
+.text{
+	font-family: $roboto_l;
+	font-size: 12pt;
+	width: 200px;
+	overflow: hidden;
+}
+
+.navbar-nav{
+	margin: 5px 0 0 0 $i;
+}
+
+.dm{
+	margin: 0 $i;
+	width: 250px;
+	padding: 0 0 0 10px;
+	background-color: red;
+	overflow: hidden;
+}
+
+.l-style{
+	font-family: $roboto_l;
+	font-size: 12pt;
+	color: #FFF;
+	width: 200px;
+	overflow: hidden;
+}
+
+/* Todo mobile list*/
 
 .mobile-list{
 	width: 100%;

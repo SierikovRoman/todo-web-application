@@ -1,11 +1,11 @@
 <?php
-  // session_start();
-  // $id = $_SESSION['id'];
+  session_start();
+  $id = $_SESSION['id'];
 
-  // if($id == null){
-  //   header("Location: index.php");
-  //   exit;
-  // }
+  if($id == null){
+    header("Location: index.php");
+    exit;
+  }
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +45,7 @@
       <ng-include src="'app/templates/sideNavMobile.html'"></ng-include>
       <ng-include src="'app/templates/todo-list.html'"></ng-include>
       <ng-include src="'app/templates/todoMobileList.html'"></ng-include>
+      <!-- <ng-include src="'app/templates/todoDetailMobile.html'"></ng-include> -->
 
 </div>
 

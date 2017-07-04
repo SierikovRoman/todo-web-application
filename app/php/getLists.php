@@ -2,7 +2,7 @@
 // Including database connections
 require_once 'db_connection.php'; 
 
-$query = "SELECT * FROM category ORDER BY id ASC";
+$query = "SELECT * FROM list ORDER BY id ASC";
 
 $result = pg_query($con, $query);
 

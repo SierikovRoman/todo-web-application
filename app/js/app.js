@@ -16,12 +16,23 @@
 
 		.when('/SignUp', {
 			templateUrl: '../../app/templates/signUpForm.html'
+		})
+
+		.when('/Main/:todoId', {
+			templateUrl: '../../app/templates/todoDetailMobile.html',
+			controller: 'testCtrl'
 		});
 
 	});
 
 	//===========================================
 	//================= LOGIC ===================
+	
+	app.controller("testCtrl",['$scope', '$routeParams', function($scope, $routeParams){
+
+		console.log($routeParams);
+
+	}]);
 	
 	
 	app.controller("LoginController",['$scope','$http', function($scope,$http){
@@ -93,32 +104,41 @@
 
 	app.controller("NavbarController",['$scope','$http', function($scope,$http){
 
-		$scope.openNav = function(){
-			document.getElementById("mySidenav").style.width = "250px";
-			document.getElementById("user").style.display = "none";
-		};
+	getUserInfo();
+	function getUserInfo(){
+		$http.post('../../app/php/getUserInfo.php').success(function(data){
+			if(data != null){
+				$scope.userInfo = data;
+				// console.log($scope.userInfo);
+			};
+		});
+	};
 
-		$scope.closeNav = function(){
-			document.getElementById("mySidenav").style.width = "0";
-			document.getElementById("user").style.display = "block";
-		};
+	$scope.openNav = function(){
+		document.getElementById("mySidenav").style.width = "250px";
+		document.getElementById("user").style.display = "none";
+	};
 
-		/*For Mobile*/
+	$scope.closeNav = function(){
+		document.getElementById("mySidenav").style.width = "0";
+		document.getElementById("user").style.display = "block";
+	};
 
-		$scope.openNavigation = function(){
-			document.getElementById("sidenav-mobile").style.width = "250px";
-			document.getElementById("user").style.display = "none";
-		};
+	/*For Mobile*/
 
-		$scope.closeNavigation = function(){
-			document.getElementById("sidenav-mobile").style.width = "0";
-			document.getElementById("user").style.display = "block";
-		};
+	$scope.openNavigation = function(){
+		document.getElementById("sidenav-mobile").style.width = "250px";
+		document.getElementById("user").style.display = "none";
+	};
+
+	$scope.closeNavigation = function(){
+		document.getElementById("sidenav-mobile").style.width = "0";
+		document.getElementById("user").style.display = "block";
+	};
 
 	}]);
 
 	app.controller("MainController",['$scope','$http', function($scope,$http){
-
 
 	getCards();
 	function getCards(){
@@ -131,12 +151,12 @@
 	};
 
 
-	getCategories();
-	function getCategories(){
-		$http.post('../../app/php/getCategories.php').success(function(data){
+	getList();
+	function getList(){
+		$http.post('../../app/php/getLists.php').success(function(data){
 			if(data != null){
-				$scope.categories = data;
-				console.log(data);
+				$scope.lists = data;
+				// console.log(data);
 			};
 		});
 	};
@@ -146,7 +166,7 @@
 		$http.post('../../app/php/getPriorities.php').success(function(data){
 			if(data != null){
 				$scope.priorities = data;
-				console.log($scope.priorities[1].name);
+				// console.log($scope.priorities[1].name);
 			};
 		});
 	};
@@ -168,7 +188,7 @@
 
 			}).success(function(data){
 			if (data != null) {
-				console.log(data);
+				// console.log(data);
 				getCards();
 			};
 		});
@@ -187,7 +207,7 @@
 			"priority":info.priority
 
 			}).success(function(data){
-				console.log(data);
+				// console.log(data);
 			if (data != null) {
 				getCards();
 			};
@@ -206,9 +226,9 @@
 })();	
 
 
-var w = $(window).width();
+// var w = $(window).width();
 
-console.log(w);
+// console.log(w);
 
 
 

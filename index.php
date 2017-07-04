@@ -19,11 +19,9 @@
 <div class="container-fluid">
 
     <ng-include src="'app/templates/loginNavbar.html'"></ng-include>
-    <!-- <ng-include src="'app/templates/loginForm.html'"></ng-include> -->
     <div class="container">
         <ng-view></ng-view>
     </div>
-    <!-- <ng-include src="'app/templates/signUpForm.html'"></ng-include> -->
     <ng-include src="'app/templates/loginFooter.html'"></ng-include>
 
 </div>

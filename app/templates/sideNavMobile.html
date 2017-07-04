@@ -1,7 +1,56 @@
 <div id="sidenav-mobile" class="sidenav-mobile visible-xs-block" ng-controller="NavbarController">
-  <a class="closebtn" ng-click="closeNavigation()" style="cursor: pointer;">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+	<span class="user-name">{{userInfo[0].name}} {{userInfo[0].surname}}</span>
+	<span class="user-email">{{userInfo[0].email}}</span>
+	<a class="closebtn" ng-click="closeNavigation()">&times;</a>
+
+	<form name="todoList" ng-controller="MainController">
+	 	<ul class="nav navbar-nav">
+
+	  	<li class="dropdown dd">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			<span class="glyphicon glyphicon-list gli" aria-hidden="true"></span>
+			<span class="text">Lists</span> 
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu dm" ng-repeat="list in lists | filter:search_query">
+				<li>
+					<input type="checkbox">
+					<span class="l-style">{{list.name}}</span>
+				</li>
+			</ul>
+		</li>
+
+	  	<!-- <hr> -->
+
+	  	<li class="dropdown dd">
+		  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		  	<span class="glyphicon glyphicon-tag gli" aria-hidden="true"></span>
+		  	<span class="text">Priority</span> 
+		  	<span class="caret"></span></a>
+		  	<ul class="dropdown-menu dm" ng-repeat="priority in priorities | filter:search_query">
+		    	<li>
+					<input type="checkbox">
+					<span class="l-style">{{priority.name}}</span>
+				</li>
+		  	</ul>
+		</li>
+
+	  	<!-- <hr> -->
+
+	  	<li class="dropdown dd">
+		  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		  	<span class="glyphicon glyphicon glyphicon-calendar gli" aria-hidden="true"></span>
+		  	<span class="text">Dates</span>
+		  	<span class="caret"></span></a>
+		  	<ul class="dropdown-menu dm">
+		    	<li>
+					<!-- <input type="checkbox"> -->
+					<!-- <span class="l-style">{{list.name}}</span> -->
+				</li>
+		  	</ul>
+		</li>
+
+	  	<!-- <hr> -->
+
+	  	</ul>
+	</form>
 </div>
