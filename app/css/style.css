@@ -49,6 +49,11 @@ a {
   color: #B0B1A1;
 }
 
+input {
+  -webkit-border-radius: none !important;
+          border-radius: none !important;
+}
+
 .nav-desktop {
   background-color: #3F3830 !important;
   color: #B0B1A1;
