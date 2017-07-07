@@ -9,7 +9,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en" ng-app="ToDoApp">
+<html lang="en" ng-app="MainApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,17 +35,25 @@
     <link rel="apple-touch-icon" href="app/images/icons/icon-152x152.png">
     <meta name="msapplication-TileImage" content="app/images/icons/icon-144x144.png">
     <meta name="msapplication-TileColor" content="#2F3BA2"> -->
+
 </head>
 <body>
 
 <div class="container-fluid cf" ng-controller="MainController">
-      <ng-include src="'app/templates/navbar.html'"></ng-include>
-      <ng-include src="'app/templates/navbarMobile.html'"></ng-include>
-      <ng-include src="'app/templates/sideNav.html'"></ng-include>
-      <ng-include src="'app/templates/sideNavMobile.html'"></ng-include>
-      <ng-include src="'app/templates/todo-list.html'"></ng-include>
-      <ng-include src="'app/templates/todoMobileList.html'"></ng-include>
-      <!-- <ng-include src="'app/templates/todoDetailMobile.html'"></ng-include> -->
+      <ng-include src="'app/templates/mobile_view/navbarMobile.html'"></ng-include>
+      <ng-include src="'app/templates/mobile_view/sideNavMobile.html'"></ng-include>
+      <ng-include src="'app/templates/mobile_view/todoMobileList.html'"></ng-include>
+
+      <!-- Add New Todo -->
+      <ng-include src="'app/templates/mobile_view/addNewCardCircle.html'"></ng-include>
+      <div>
+        <!-- <ng-include src="'app/templates/mobile_view/navbarNewTodoMobile.html'"></ng-include> -->
+        <ng-include src="'app/templates/mobile_view/addNewTodoMobile.html'"></ng-include>
+        <ng-view></ng-view>
+      </div>
+      
+      <!-- Add New Todo List -->
+      <ng-include src="'app/templates/mobile_view/newListModal.html'"></ng-include>
 
 </div>
 

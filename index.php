@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ToDoApp">
+<html lang="en" ng-app="Login">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,11 +18,11 @@
 	
 <div class="container-fluid">
 
-    <ng-include src="'app/templates/loginNavbar.html'"></ng-include>
+    <ng-include src="'app/templates/login/loginNavbar.html'"></ng-include>
     <div class="container">
         <ng-view></ng-view>
     </div>
-    <ng-include src="'app/templates/loginFooter.html'"></ng-include>
+    <ng-include src="'app/templates/login/loginFooter.html'"></ng-include>
 
 </div>
 

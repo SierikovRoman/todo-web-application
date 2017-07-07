@@ -1,0 +1,86 @@
+<div class="visible-xs-sm-block new-todo" hidden>
+	<div class="container">
+		<form name="newTodoInfo" method="POST" ng-controller="MainController" ng-submit="addNewTodo(todoInfo);">
+			
+			<!-- Title -->
+	        <div class="form-group">
+	          	<label for="todoName" class="t-title">Title: </label>
+	          	<input
+	                type="text"
+	                name="todoName"
+	                class="my-form-control"
+	                placeholder="Make a pie"
+	                ng-model="todoInfo.todoName"
+	                maxlength="50"
+	                required />
+	        </div>
+	          
+	        <div class="form-group">
+	           	<p class="text-danger" ng-show="newTodoInfo.todoName.$invalid && newTodoInfo.todoName.$dirty">Title field is empty!</p>
+	        </div>
+
+			<!-- Details -->
+	        <div class="form-group">
+	          	<label for="todoDetail" class="t-title">Detail: </label>
+	          	<input
+	                type="text"
+	                name="todoDetail"
+	                class="my-form-control"
+	                placeholder="Buy tea"
+	                ng-model="todoInfo.todoDetail"
+	        	>
+	        </div>
+	          
+	        <!-- <div class="form-group">
+	           	<p class="text-danger" ng-show="newTodoInfo.todoName.$invalid && newTodoInfo.todoName.$dirty">Detail field is empty!</p>
+	        </div> -->
+
+			<!-- Photo -->
+	        <div class="form-group">
+	          	<label for="todoDetailPhoto" class="t-title">Photo: </label>
+	          	<input
+	                type="file"
+	                name="todoDetailPhoto"
+	                class="my-form-control"
+	                ng-model="todoInfo.todoDetailPhoto"
+	                accept="image/*;capture=camera"
+	        	>
+	        </div>
+	          
+			<!-- List -->
+	        <div class="form-group" >
+	            <label for="todoList" class="t-title">List: </label>
+
+	            <select ng-model="todoInfo.todoList" required>
+	            	<option value=""> Select List </option>
+	            	<option ng-repeat="list in lists" value="{{list.id}}">{{list.name}}</option>
+	            </select>
+
+	        </div>
+
+	        <div class="form-group">
+	           	<p class="text-danger" ng-show="newTodoInfo.todoList.$invalid && newTodoInfo.todoList.$dirty">Todo list field is empty!</p>
+	        </div>
+
+				
+			<!-- Priority -->
+			<div class="form-group" >
+	            <label for="todoPriority" class="t-title">Priority: </label>
+
+	            <select ng-model="todoInfo.todoPriority" required>
+	            	<option value=""> Select Priority </option>
+	            	<option ng-repeat="prioritie in priorities" value="{{prioritie.id}}">{{prioritie.name}}</option>
+	            </select>
+
+	        </div>
+
+	        <div class="form-group">
+	           	<p class="text-danger" ng-show="newTodoInfo.todoPriority.$invalid && newTodoInfo.todoPriority.$dirty">Todo list field is empty!</p>
+	        </div>
+
+
+	          <!-- <p align="left" id="error" style="color: red;"></p> -->
+	          <button type="submit" class="btn cbt" ng-disabled="newTodoInfo.$invalid">Create</button>
+	      </form>
+      </div>
+</div>

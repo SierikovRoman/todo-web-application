@@ -1,41 +1,28 @@
 // Application module
 (function () {
 
-	var app = angular.module('ToDoApp', ['ngRoute']);
+	/* LOGIN MODULE */
+	/*=============================================*/
+	var login = angular.module('Login', ['ngRoute']);
 
-	app.config(function ($routeProvider) {
+	login.config(function ($routeProvider) {
 		$routeProvider
 
 		.when('/', {
-			templateUrl: '../../app/templates/loginForm.html'
+			templateUrl: '../../app/templates/login/loginForm.html'
 		})
 
 		.when('/LogIn', {
-			templateUrl: '../../app/templates/loginForm.html'
+			templateUrl: '../../app/templates/login/loginForm.html'
 		})
 
 		.when('/SignUp', {
-			templateUrl: '../../app/templates/signUpForm.html'
-		})
-
-		.when('/Main/:todoId', {
-			templateUrl: '../../app/templates/todoDetailMobile.html',
-			controller: 'testCtrl'
+			templateUrl: '../../app/templates/login/signUpForm.html'
 		});
 
 	});
-
-	//===========================================
-	//================= LOGIC ===================
 	
-	app.controller("testCtrl",['$scope', '$routeParams', function($scope, $routeParams){
-
-		console.log($routeParams);
-
-	}]);
-	
-	
-	app.controller("LoginController",['$scope','$http', function($scope,$http){
+	login.controller("LoginController",['$scope','$http', function($scope,$http){
 
 
 	// Check User
@@ -57,7 +44,7 @@
 
 	}]);
 
-	app.controller("SingUpController",['$scope','$http', function($scope,$http){
+	login.controller("SingUpController",['$scope','$http', function($scope,$http){
 	
 	// Add new user to system
 	$scope.addNewUser = function(info){
@@ -102,6 +89,26 @@
 
 	}]);
 
+
+	/*  MAIN MODULE */
+	/*=============================================*/
+
+	var app = angular.module('MainApp', ['ngRoute']);
+
+	app.config(function ($routeProvider) {
+		$routeProvider
+
+		// .when('/main', {
+		// 	templateUrl: '../../app/templates/mobile_view/todoMobileList.html'
+		// })
+
+		// .when('/addNewTodo', {
+		// 	templateUrl: '../../app/templates/mobile_view/addNewTodoMobile.html'
+		// });
+
+
+	});
+
 	app.controller("NavbarController",['$scope','$http', function($scope,$http){
 
 	getUserInfo();
@@ -114,6 +121,7 @@
 		});
 	};
 
+	/* For Desktop View */
 	$scope.openNav = function(){
 		document.getElementById("mySidenav").style.width = "250px";
 		document.getElementById("user").style.display = "none";
@@ -124,7 +132,7 @@
 		document.getElementById("user").style.display = "block";
 	};
 
-	/*For Mobile*/
+	/* For Mobile View */
 
 	$scope.openNavigation = function(){
 		document.getElementById("sidenav-mobile").style.width = "250px";
@@ -156,7 +164,6 @@
 		$http.post('../../app/php/getLists.php').success(function(data){
 			if(data != null){
 				$scope.lists = data;
-				// console.log(data);
 			};
 		});
 	};
@@ -198,27 +205,61 @@
 		$('#editCard').modal('hide');
 	};
 
-	$scope.addNewCard = function(info){
-		$http.post('../../app/php/addNewCard.php',{
 
-			"title":info.title,
-			"description":info.description,
-			"category":info.category,
-			"priority":info.priority
+	$scope.createNewTodo = function(){
+		$('.mobile-list, .nav-mobile').slideUp();
+		$('.new-todo, .nav-new-todo-mobile').slideToggle();
+		$('.circle').addClass('hide');
+	};
+
+	// $scope.addNewCard = function(info){
+	// 	$http.post('../../app/php/addNewCard.php',{
+
+	// 		"title":info.title,
+	// 		"description":info.description,
+	// 		"category":info.category,
+	// 		"priority":info.priority
+
+	// 		}).success(function(data){
+	// 			// console.log(data);
+	// 		if (data != null) {
+	// 			getCards();
+	// 		};
+	// 	});
+	// };
+
+	// $scope.new_card = function(){
+	// 	$scope.cardInfo = null; 
+	// 	$('#addNewCard').modal('hide');
+	// 	$('#success').modal('show');
+	// };
+
+
+
+
+	/* Create New List*/
+
+	$scope.newList = function(){
+		$('#newList').modal('show');
+	};
+
+	$scope.addNewList = function(info){
+		$http.post('../../app/php/addNewList.php',{
+
+			"name":info.listName
 
 			}).success(function(data){
-				// console.log(data);
-			if (data != null) {
-				getCards();
-			};
+				console.log(data);
+				getList();
+			if (data == "error") {
+				$('#error').text("Sorry this list is already exist.");
+			}else if(data == "true"){
+				$scope.listInfo = null; 
+				$('#newList').modal('hide');
+			}
 		});
 	};
 
-	$scope.new_card = function(){
-		$scope.cardInfo = null; 
-		$('#addNewCard').modal('hide');
-		$('#success').modal('show');
-	};
 
 
 	}]);
