@@ -43,7 +43,7 @@
     <meta name="msapplication-TileColor" content="#2F3BA2"> -->
 
 </head>
-<body>
+<body ng-cloak>
 
 <div class="container-fluid cf" ng-controller="MainController">
       <ng-include src="'app/templates/mobile_view/navbarMobile.html'"></ng-include>

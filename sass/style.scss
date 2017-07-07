@@ -477,6 +477,7 @@ input{
 	border-right: none $i;
 	border-left: none $i;
 	border-bottom: 2px solid #111;
+	border-radius: 0 $i;
 	// box-shadow: 0px 5px 15px #888888;
 }
 
@@ -492,30 +493,6 @@ input{
 }
 
 /* Add Adons*/
-
-// .link-bt{
-// 	width: 100%;
-// 	border-radius: 0 $i;
-// 	font-family: $roboto_l;
-// 	font-size: 14px;
-// 	background-color: #111 $i;
-// 	box-shadow: 0px 5px 15px #888888;
-// 	color: #FFF $i;
-// 	padding: 6px 5px 6px 0px $i;
-// }
-
-// .inner-addon {
-//   position: relative;
-// }
-
-// .inner-addon .glyphicon {
-//   position: absolute;
-//   padding: 10px;
-//   font-size: 18px;
-//   color: #FFF;
-//   pointer-events: none;
-//   text-align: center;
-// }
 
 .inputfile {
     width: 0.1px;
@@ -584,16 +561,25 @@ input{
 .d-title{
 	font-family: $roboto_m;
 	font-size: 14pt;
+	color: #111;
+	font-weight: 200;
 	padding: 10px 0 0 0;
 	margin-bottom: 0 $i;
+}
+
+.input-group-addon{
+	background-color: #FFF $i;
+	border-radius: 0 $i;
+	border: none $i;
 }
 
 .date-p{
 	padding: 0 15px 0 0 $i;
 }
 
+
 #date_deadline, #date_assigned{
-	padding: 10px 0 0px 5px $i;
+	padding: 10px 0 0 0 $i;
 }
 
 .sel{
@@ -604,28 +590,6 @@ input{
 	width: 100% $i;
 	height: 25px $i;
 }
-
-
-
-
-
-
-
-
-
-// .block-left{
-// 	width: 25%;
-// 	position: absolute;
-// 	left: 0;
-// 	top: 51px;
-// 	z-index: 0;
-// 	background-color: #3F3830;
-// 	color: #FFF;
-// 	overflow-y: scroll;
-// 	overflow-x: hidden; 
-// 	padding: 0 $i;
-// }
-
 
 
 

@@ -1,4 +1,4 @@
-<div class="visible-xs-sm-block new-todo" hidden>
+<div class="visible-xs-sm-block new-todo" ng-cloak hidden>
 	<div class="container">
 		<form name="newTodoInfo" method="POST" ng-controller="MainController" ng-submit="addNewTodo(todoInfo);">
 			
@@ -43,42 +43,21 @@
 
 			<!-- Date assigned -->
             <div class="form-group">
-            	<div class="row">
-	            	<div class="col-xs-6">
-	                	<label for="todoDateAssigned" class="d-title">Date assigned: </label>
-	                </div>
-
-	                <div class="col-xs-6 date-p">
-	                	<input type="text" class="my-form-control" id="date_assigned"/>
-	                </div>
-                </div>
+            	<div class='input-group' id='date_assigned'>
+		            <label for="todoDateAssigned" class="d-title input-group-addon">Date assigned: </label>
+		            <input type="text" class="my-form-control" readonly/>
+	            </div>
             </div>
-
-            <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <input type='text' class="form-control" id='datetimepicker4' />
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker4').datetimepicker();
-            });
-        </script>
-    </div>
-</div>
 
             <!-- Date deadline -->
-            <div class="form-group">
-            	<div class="row">
-	            	<div class="col-xs-6">
-	                	<label for="todoDateDeadline" class="d-title">Date deadline: </label>
-	                </div>
 
-	                <div class="col-xs-6 date-p">
-	                	<input type="text" class="my-form-control" id="date_deadline"/>
-	                </div>
+            <div class="form-group">
+                <div class='input-group' id='date_deadline'>
+                	<label for="todoDateDeadline" class="d-title input-group-addon">Date deadline: </label>
+                    <input type='text' class="my-form-control" readonly/>
                 </div>
             </div>
+
 	          
 			<!-- List -->
 	        <div class="form-group">

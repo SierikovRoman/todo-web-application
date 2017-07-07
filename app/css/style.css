@@ -465,6 +465,8 @@ input {
   border-right: none !important;
   border-left: none !important;
   border-bottom: 2px solid #111;
+  -webkit-border-radius: 0 !important;
+          border-radius: 0 !important;
 }
 
 .cbt {
@@ -544,8 +546,17 @@ input {
 .d-title {
   font-family: "Roboto Medium", serif;
   font-size: 14pt;
+  color: #111;
+  font-weight: 200;
   padding: 10px 0 0 0;
   margin-bottom: 0 !important;
+}
+
+.input-group-addon {
+  background-color: #FFF !important;
+  -webkit-border-radius: 0 !important;
+          border-radius: 0 !important;
+  border: none !important;
 }
 
 .date-p {
@@ -553,7 +564,7 @@ input {
 }
 
 #date_deadline, #date_assigned {
-  padding: 10px 0 0px 5px !important;
+  padding: 10px 0 0 0 !important;
 }
 
 .sel {
