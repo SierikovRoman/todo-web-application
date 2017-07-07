@@ -35,27 +35,57 @@
 	           	<p class="text-danger" ng-show="newTodoInfo.todoName.$invalid && newTodoInfo.todoName.$dirty">Detail field is empty!</p>
 	        </div> -->
 
-			<!-- Photo -->
-	        <div class="form-group">
-	          	<label for="todoDetailPhoto" class="t-title">Photo: </label>
-	          	<input
+			<!-- Add ones -->
+			<div class="form-group inner-addon left-addon">
+				<span class="glyphicon glyphicon-link glyp-link" aria-hidden="true"></span>	
+			    <input
 	                type="file"
 	                name="todoDetailPhoto"
-	                class="my-form-control"
+	                class="btn link-bt"
 	                ng-model="todoInfo.todoDetailPhoto"
 	                accept="image/*;capture=camera"
 	        	>
-	        </div>
+			</div>
+
+			<!-- Date assigned -->
+            <div class="form-group">
+            	<div class="row">
+	            	<div class="col-xs-6">
+	                	<label for="todoDateAssigned" class="d-title">Date assigned: </label>
+	                </div>
+
+	                <div class="col-xs-6 date-p">
+	                	<input type="text" class="my-form-control" id="date_assigned"/>
+	                </div>
+                </div>
+            </div>
+
+            <!-- Date deadline -->
+            <div class="form-group">
+            	<div class="row">
+	            	<div class="col-xs-6">
+	                	<label for="todoDateDeadline" class="d-title">Date deadline: </label>
+	                </div>
+
+	                <div class="col-xs-6 date-p">
+	                	<input type="text" class="my-form-control" id="date_deadline"/>
+	                </div>
+                </div>
+            </div>
 	          
 			<!-- List -->
-	        <div class="form-group" >
-	            <label for="todoList" class="t-title">List: </label>
-
-	            <select ng-model="todoInfo.todoList" required>
-	            	<option value=""> Select List </option>
-	            	<option ng-repeat="list in lists" value="{{list.id}}">{{list.name}}</option>
-	            </select>
-
+	        <div class="form-group">
+	        	<div class="row">
+	        		<div class="col-xs-6">
+	        			<label for="todoList" class="t-title">List: </label>
+	        		</div>
+	        		<div class="col-xs-6 sel">
+	        			<select ng-model="todoInfo.todoList" class="select" required>
+			            	<option value=""> Select List </option>
+			            	<option ng-repeat="list in lists" value="{{list.id}}">{{list.name}}</option>
+			            </select>
+	        		</div>
+	        	</div>
 	        </div>
 
 	        <div class="form-group">
@@ -65,13 +95,17 @@
 				
 			<!-- Priority -->
 			<div class="form-group" >
-	            <label for="todoPriority" class="t-title">Priority: </label>
-
-	            <select ng-model="todoInfo.todoPriority" required>
-	            	<option value=""> Select Priority </option>
-	            	<option ng-repeat="prioritie in priorities" value="{{prioritie.id}}">{{prioritie.name}}</option>
-	            </select>
-
+				<div class="row">
+					<div class="col-xs-6">
+						<label for="todoPriority" class="t-title">Priority: </label>
+					</div>
+					<div class="col-xs-6 sel">
+						<select ng-model="todoInfo.todoPriority" class="select" required>
+			            	<option value=""> Select Priority </option>
+			            	<option ng-repeat="prioritie in priorities" value="{{prioritie.id}}">{{prioritie.name}}</option>
+			            </select>
+					</div>
+				</div>
 	        </div>
 
 	        <div class="form-group">

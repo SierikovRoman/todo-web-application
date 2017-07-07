@@ -447,15 +447,19 @@ a {
 
 .new-todo{
 	position: absolute;
-	top: 70px;
+	top: 65px;
+	bottom: 0;
 	width: 100%;
 	z-index: 0;
 	overflow-x: hidden;
+	padding: 10px 0 0 0;
+	// background-color: #ccc;
 }
 
 .t-title{
 	font-family: $roboto_m;
 	font-size: 14pt;
+	margin-bottom: 0 $i;
 }
 
 .my-form-control{
@@ -473,6 +477,7 @@ a {
 }
 
 .cbt{
+	margin: 10px 0 10px 0;
 	float: right;
 	border-radius: 0 $i;
 	font-family: $roboto_l;
@@ -481,6 +486,61 @@ a {
 	box-shadow: 0px 5px 15px #888888;
 	color: #FFF $i;
 }
+
+/* Add Adons*/
+
+.link-bt{
+	width: 100%;
+	border-radius: 0 $i;
+	font-family: $roboto_l;
+	font-size: 14px;
+	background-color: #111 $i;
+	box-shadow: 0px 5px 15px #888888;
+	color: #FFF $i;
+	padding: 6px 5px 6px 0px $i;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  font-size: 18px;
+  color: #FFF;
+  pointer-events: none;
+  text-align: center;
+}
+
+.d-title{
+	font-family: $roboto_m;
+	font-size: 14pt;
+	padding: 10px 0 0 0;
+	margin-bottom: 0 $i;
+}
+
+.date-p{
+	padding: 0 15px 0 0 $i;
+}
+
+#date_deadline, #date_assigned{
+	padding: 10px 0 0px 5px $i;
+}
+
+.sel{
+	padding: 0 15px 0 0 $i;
+}
+
+.select{
+	width: 100% $i;
+	height: 25px $i;
+}
+
+
+
 
 
 

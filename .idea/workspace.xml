@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a833758b-509e-4071-8340-504ae27d57cd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/loginFooter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/loginForm.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/loginNavbar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/main-window.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/mobileCard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/navbarMobile.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/sideNavMobile.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/signUpForm.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/todoDetailMobile.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/a6f625f6-ce67-4b17-a87e-0b3992a8e304.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/a6f625f6-ce67-4b17-a87e-0b3992a8e304.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/style.css" afterPath="$PROJECT_DIR$/app/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/app.js" afterPath="$PROJECT_DIR$/app/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/libs/bootstrap/dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/app/libs/bootstrap/dist/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/addNewCardCircle.html" afterPath="$PROJECT_DIR$/app/templates/addNewCardCircle.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.php" afterPath="$PROJECT_DIR$/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/mobile_view/addNewTodoMobile.html" afterPath="$PROJECT_DIR$/app/templates/mobile_view/addNewTodoMobile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/style.scss" afterPath="$PROJECT_DIR$/sass/style.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -441,12 +426,12 @@
       <workItem from="1499100938775" duration="1309000" />
       <workItem from="1499202978216" duration="3360000" />
       <workItem from="1499371722686" duration="100000" />
-      <workItem from="1499415258441" duration="766000" />
+      <workItem from="1499415258441" duration="1001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25640000" />
+    <option name="totallyTimeSpent" value="25875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="939" y="-1177" width="1566" height="1170" extended-state="0" />

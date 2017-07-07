@@ -435,15 +435,18 @@ a {
 /* Add new todo view */
 .new-todo {
   position: absolute;
-  top: 70px;
+  top: 65px;
+  bottom: 0;
   width: 100%;
   z-index: 0;
   overflow-x: hidden;
+  padding: 10px 0 0 0;
 }
 
 .t-title {
   font-family: "Roboto Medium", serif;
   font-size: 14pt;
+  margin-bottom: 0 !important;
 }
 
 .my-form-control {
@@ -460,6 +463,7 @@ a {
 }
 
 .cbt {
+  margin: 10px 0 10px 0;
   float: right;
   -webkit-border-radius: 0 !important;
           border-radius: 0 !important;
@@ -469,4 +473,57 @@ a {
   -webkit-box-shadow: 0px 5px 15px #888888;
           box-shadow: 0px 5px 15px #888888;
   color: #FFF !important;
+}
+
+/* Add Adons*/
+.link-bt {
+  width: 100%;
+  -webkit-border-radius: 0 !important;
+          border-radius: 0 !important;
+  font-family: "Roboto Light", serif;
+  font-size: 14px;
+  background-color: #111 !important;
+  -webkit-box-shadow: 0px 5px 15px #888888;
+          box-shadow: 0px 5px 15px #888888;
+  color: #FFF !important;
+  padding: 6px 5px 6px 0px !important;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  font-size: 18px;
+  color: #FFF;
+  pointer-events: none;
+  text-align: center;
+}
+
+.d-title {
+  font-family: "Roboto Medium", serif;
+  font-size: 14pt;
+  padding: 10px 0 0 0;
+  margin-bottom: 0 !important;
+}
+
+.date-p {
+  padding: 0 15px 0 0 !important;
+}
+
+#date_deadline, #date_assigned {
+  padding: 10px 0 0px 5px !important;
+}
+
+.sel {
+  padding: 0 15px 0 0 !important;
+}
+
+.select {
+  width: 100% !important;
+  height: 25px !important;
 }

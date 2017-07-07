@@ -1,16 +1,34 @@
 $(document).ready(function() {
 
-	function fullHeight(){
-	    $('.block-left').css({
-	        height: $(window).height() + 'px'
-	    });
-	};
+	$(function () {
+        $("#date_assigned").datetimepicker({
+        	viewMode: 'days',
+        	format: 'DD.MM.YYYY',
+        	useCurrent: false
+        });
+    });
+
+    $(function () {
+        $("#date_deadline").datetimepicker({
+        	viewMode: 'days',
+        	format: 'DD.MM.YYYY',
+        	useCurrent: false
+        });
+    });
+
+
+
+	// function fullHeight(){
+	//     $('.block-left').css({
+	//         height: $(window).height() + 'px'
+	//     });
+	// };
 	 
 	// задаем высоту при первичной загрузке
-	fullHeight();
+	// fullHeight();
 	 
 	// высота при изменении размера окна браузера
-	$(window).resize( fullHeight );
+	// $(window).resize( fullHeight );
 
 	// Get width
 	// var large = 1200;
@@ -33,5 +51,7 @@ $(document).ready(function() {
 	// getWidth();
 
 	// $(window).resize( getWidth );
+	
+
 
 });
