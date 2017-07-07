@@ -17,7 +17,6 @@ $(document).ready(function() {
     });
 
 
-
 	// function fullHeight(){
 	//     $('.block-left').css({
 	//         height: $(window).height() + 'px'

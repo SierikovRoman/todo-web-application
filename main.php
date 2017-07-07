@@ -9,7 +9,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en" ng-app="MainApp">
+<html lang="en" ng-app="MainApp" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +22,8 @@
     <script src="app/libs/angular/angular.js"></script>
     <script src="app/libs/angular/angular-route.min.js"></script>
     <script src="app/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 
     <link rel="stylesheet" type="text/css" href="app/libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="app/libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
