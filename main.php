@@ -19,6 +19,7 @@
     <script src="app/libs/jquery/dist/jquery.min.js"></script>
     <script src="app/libs/moment/min/moment.min.js"></script>
     <script src="app/libs/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+    <script src="app/libs/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="app/libs/angular/angular.js"></script>
     <script src="app/libs/angular/angular-route.min.js"></script>
     <script src="app/libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -27,6 +28,7 @@
 
     <link rel="stylesheet" type="text/css" href="app/libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="app/libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="app/libs/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="app/css/style.css">
     

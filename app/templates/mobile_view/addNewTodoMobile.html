@@ -58,6 +58,23 @@
                 </div>
             </div>
 
+            <div class="form-group">
+            	<div class='input-group'>
+            	<label for="todoDateDeadline" class="d-title input-group-addon">TEST: </label>
+              	<input type="text" 
+                     name="projectStartDate"
+                     class="my-form-control" 
+                     data-provide="datepicker"
+                     readonly />
+          	</div>
+
+          	<script>
+          		$('.datepicker').datepicker({
+					format: 'dd.mm.yyyy',
+					autoclose: true
+				});
+          	</script>
+
 	          
 			<!-- List -->
 	        <div class="form-group">
