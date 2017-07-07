@@ -144,6 +144,12 @@
 		document.getElementById("user").style.display = "block";
 	};
 
+	/* Search todo */
+	$scope.search = function(){
+		$('.search-todo').slideToggle();
+		$('.search-todo').removeClass('hide')
+	};
+
 	}]);
 
 	app.controller("MainController",['$scope','$http', function($scope,$http){
@@ -153,7 +159,7 @@
 		$http.post('../../app/php/getCards.php').success(function(data){
 			if(data != null){
 				$scope.cards = data;
-				console.log(data);
+				// console.log(data);
 			};
 		});
 	};
@@ -178,32 +184,32 @@
 		});
 	};
 
-	$scope.currentInfo = {};
-	$scope.editCard = function(info){
-		$scope.currentInfo = info;
-		$('#editCard').modal('show');
-	};
+	// $scope.currentInfo = {};
+	// $scope.editCard = function(info){
+	// 	$scope.currentInfo = info;
+	// 	$('#editCard').modal('show');
+	// };
 
-	$scope.updateCard = function(info){
-		$http.post('../../app/php/updateCard.php',{
+	// $scope.updateCard = function(info){
+	// 	$http.post('../../app/php/updateCard.php',{
 
-			"id":info.id,
-			"title":info.title,
-			"description":info.description,
-			"category":info.category_id,
-			"priority":info.priority_id
+	// 		"id":info.id,
+	// 		"title":info.title,
+	// 		"description":info.description,
+	// 		"category":info.category_id,
+	// 		"priority":info.priority_id
 
-			}).success(function(data){
-			if (data != null) {
-				// console.log(data);
-				getCards();
-			};
-		});
-	};
+	// 		}).success(function(data){
+	// 		if (data != null) {
+	// 			// console.log(data);
+	// 			getCards();
+	// 		};
+	// 	});
+	// };
 
-	$scope.updateMsg = function(id){
-		$('#editCard').modal('hide');
-	};
+	// $scope.updateMsg = function(id){
+	// 	$('#editCard').modal('hide');
+	// };
 
 
 	$scope.createNewTodo = function(){
@@ -212,29 +218,25 @@
 		$('.circle').addClass('hide');
 	};
 
-	// $scope.addNewCard = function(info){
-	// 	$http.post('../../app/php/addNewCard.php',{
+	$scope.addNewTodo = function(info){
+		$http.post('../../app/php/addNewTodo.php',{
 
-	// 		"title":info.title,
-	// 		"description":info.description,
-	// 		"category":info.category,
-	// 		"priority":info.priority
+			"name":info.todoName,
+			"detail":info.todoDetail,
+			"date_assigned":info.todoDateAssigned,
+			"date_deadline":info.todoDateDeadline,
+			"list_id":info.todoList,
+			"priority_id":info.todoPriority
 
-	// 		}).success(function(data){
-	// 			// console.log(data);
-	// 		if (data != null) {
-	// 			getCards();
-	// 		};
-	// 	});
-	// };
-
-	// $scope.new_card = function(){
-	// 	$scope.cardInfo = null; 
-	// 	$('#addNewCard').modal('hide');
-	// 	$('#success').modal('show');
-	// };
-
-
+			}).success(function(data){
+			if (data != null) {
+				$('.mobile-list, .nav-mobile').slideToggle();
+				$('.new-todo, .nav-new-todo-mobile').slideUp();
+				$('.circle').removeClass('hide');
+			};
+			getCards();
+		});
+	};
 
 
 	/* Create New List*/

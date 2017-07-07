@@ -1,20 +1,9 @@
 $(document).ready(function() {
 
-	$(function () {
-        $("#date_assigned").datetimepicker({
-        	viewMode: 'days',
-        	format: 'DD.MM.YYYY',
-        	useCurrent: false
-        });
-    });
-
-    $(function () {
-        $("#date_deadline").datetimepicker({
-        	viewMode: 'days',
-        	format: 'DD.MM.YYYY',
-        	useCurrent: false
-        });
-    });
+    $('.datepicker').datepicker({
+		format: 'yyyy/mm/dd',
+		autoclose: true
+	});
 
 
 	// function fullHeight(){

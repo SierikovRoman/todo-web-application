@@ -1,6 +1,6 @@
 <div class="visible-xs-sm-block new-todo" ng-cloak hidden>
 	<div class="container">
-		<form name="newTodoInfo" method="POST" ng-controller="MainController" ng-submit="addNewTodo(todoInfo);">
+		<form name="newTodoInfo" method="POST" ng-submit="addNewTodo(todoInfo);">
 			
 			<!-- Title -->
 	        <div class="form-group">
@@ -43,51 +43,46 @@
 
 			<!-- Date assigned -->
             <div class="form-group">
-            	<div class='input-group' id='date_assigned'>
+            	<div class='input-group'>
 		            <label for="todoDateAssigned" class="d-title input-group-addon">Date assigned: </label>
-		            <input type="text" class="my-form-control" readonly/>
+		            <input type="text"
+		            	   name="todoDateAssigned" 
+                     	   class="my-form-control date" 
+                     	   data-provide="datepicker"
+                     	   ng-model="todoInfo.todoDateAssigned"
+                     	   readonly />
 	            </div>
             </div>
 
-            <!-- Date deadline -->
-
             <div class="form-group">
-                <div class='input-group' id='date_deadline'>
+	           	<p class="text-danger" ng-show="newTodoInfo.todoDateAssigned.$invalid && newTodoInfo.todoDateAssigned.$dirty">Date assigned is empty!</p>
+	        </div>
+
+            <!-- Date deadline -->
+            <div class="form-group">
+                <div class='input-group'>
                 	<label for="todoDateDeadline" class="d-title input-group-addon">Date deadline: </label>
-                    <input type='text' class="my-form-control" readonly/>
+                    <input type="text"
+                    	   name="todoDateDeadline" 
+                    	   class="my-form-control date" 
+                     	   data-provide="datepicker"
+                     	   ng-model="todoInfo.todoDateDeadline"
+                     	   readonly />
                 </div>
             </div>
 
             <div class="form-group">
-            	<div class='input-group'>
-            	<label for="todoDateDeadline" class="d-title input-group-addon">TEST: </label>
-              	<input type="text" 
-                     name="projectStartDate"
-                     class="my-form-control" 
-                     data-provide="datepicker"
-                     readonly />
-          	</div>
-
-          	<script>
-          		$('.datepicker').datepicker({
-					format: 'dd.mm.yyyy',
-					autoclose: true
-				});
-          	</script>
-
+	           	<p class="text-danger" ng-show="newTodoInfo.todoDateDeadline.$invalid && newTodoInfo.todoDateDeadline.$dirty">Date deadline is empty!</p>
+	        </div>
 	          
 			<!-- List -->
 	        <div class="form-group">
-	        	<div class="row">
-	        		<div class="col-xs-6">
-	        			<label for="todoList" class="t-title">List: </label>
-	        		</div>
-	        		<div class="col-xs-6 sel">
-	        			<select ng-model="todoInfo.todoList" class="select" required>
-			            	<option value=""> Select List </option>
-			            	<option ng-repeat="list in lists" value="{{list.id}}">{{list.name}}</option>
-			            </select>
-	        		</div>
+	        	<div class='input-group'>
+	        		<label for="todoList" class="d-title input-group-addon" >List: </label>
+        			<select ng-model="todoInfo.todoList" class="select" required>
+		            	<option value=""> Select List </option>
+		            	<option ng-repeat="list in lists" value="{{list.id}}">{{list.name}}</option>
+		            </select>
 	        	</div>
 	        </div>
 
@@ -98,16 +93,12 @@
 				
 			<!-- Priority -->
 			<div class="form-group" >
-				<div class="row">
-					<div class="col-xs-6">
-						<label for="todoPriority" class="t-title">Priority: </label>
-					</div>
-					<div class="col-xs-6 sel">
-						<select ng-model="todoInfo.todoPriority" class="select" required>
-			            	<option value=""> Select Priority </option>
-			            	<option ng-repeat="prioritie in priorities" value="{{prioritie.id}}">{{prioritie.name}}</option>
-			            </select>
-					</div>
+				<div class='input-group'>
+					<label for="todoPriority" class="d-title input-group-addon">Priority: </label>
+					<select ng-model="todoInfo.todoPriority" class="select" required>
+		            	<option value=""> Select Priority </option>
+		            	<option ng-repeat="prioritie in priorities" value="{{prioritie.id}}">{{prioritie.name}}</option>
+		            </select>
 				</div>
 	        </div>
 

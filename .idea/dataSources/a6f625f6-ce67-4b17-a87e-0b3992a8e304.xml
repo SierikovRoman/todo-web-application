@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-07-05.21:31:08.049</IntrospectionTimestamp>
-      <IntrospectionStateNumber>12849031</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-07-07.22:26:18.068</IntrospectionTimestamp>
+      <IntrospectionStateNumber>13217847</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -29,143 +29,149 @@
     <schema id="8" parent="2" name="information_schema">
       <ObjectId>13003</ObjectId>
     </schema>
-    <sequence id="9" parent="3" name="list_id_seq">
+    <sequence id="9" parent="3" name="card_id_seq">
+      <ObjectId>15750095</ObjectId>
+      <StateNumber>13217790</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="10" parent="3" name="list_id_seq">
       <ObjectId>15705128</ObjectId>
       <StateNumber>12849026</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <sequence id="10" parent="3" name="user_id_seq">
+    <sequence id="11" parent="3" name="user_id_seq">
       <ObjectId>15488640</ObjectId>
       <StateNumber>10647471</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <table id="11" parent="3" name="card">
+    <table id="12" parent="3" name="card">
       <ObjectId>10592304</ObjectId>
       <StateNumber>11526008</StateNumber>
     </table>
-    <table id="12" parent="3" name="list">
+    <table id="13" parent="3" name="list">
       <ObjectId>10592403</ObjectId>
       <StateNumber>11524329</StateNumber>
     </table>
-    <table id="13" parent="3" name="priority">
+    <table id="14" parent="3" name="priority">
       <ObjectId>10592408</ObjectId>
       <StateNumber>7288531</StateNumber>
     </table>
-    <table id="14" parent="3" name="user">
+    <table id="15" parent="3" name="user">
       <ObjectId>15488642</ObjectId>
       <StateNumber>10647471</StateNumber>
     </table>
-    <column id="15" parent="11" name="id">
+    <column id="16" parent="12" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>7288469</StateNumber>
+      <StateNumber>13217847</StateNumber>
+      <DefaultExpression>nextval(&apos;card_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="16" parent="11" name="name">
+    <column id="17" parent="12" name="name">
       <Position>2</Position>
       <DataType>varchar(250)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>11524311</StateNumber>
     </column>
-    <column id="17" parent="11" name="detail">
+    <column id="18" parent="12" name="detail">
       <Position>3</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>11524312</StateNumber>
     </column>
-    <column id="18" parent="11" name="list_id">
+    <column id="19" parent="12" name="list_id">
       <Position>5</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>11524313</StateNumber>
     </column>
-    <column id="19" parent="11" name="date_created">
+    <column id="20" parent="12" name="date_created">
       <Position>6</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>11524314</StateNumber>
     </column>
-    <column id="20" parent="11" name="date_assigned">
+    <column id="21" parent="12" name="date_assigned">
       <Position>7</Position>
       <DataType>date|0</DataType>
       <StateNumber>11524308</StateNumber>
     </column>
-    <column id="21" parent="11" name="date_deadline">
+    <column id="22" parent="12" name="date_deadline">
       <Position>8</Position>
       <DataType>date|0</DataType>
       <StateNumber>11524309</StateNumber>
     </column>
-    <column id="22" parent="11" name="is_done">
+    <column id="23" parent="12" name="is_done">
       <Position>9</Position>
       <DataType>boolean|0</DataType>
       <StateNumber>11526009</StateNumber>
       <DefaultExpression>false</DefaultExpression>
     </column>
-    <column id="23" parent="11" name="priority_id">
+    <column id="24" parent="12" name="priority_id">
       <Position>10</Position>
       <DataType>integer|0</DataType>
       <StateNumber>11526008</StateNumber>
     </column>
-    <index id="24" parent="11" name="card_pkey">
+    <index id="25" parent="12" name="card_pkey">
       <ObjectId>10592415</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="25" parent="11" name="card_pkey">
+    <key id="26" parent="12" name="card_pkey">
       <ObjectId>10592416</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>card_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="26" parent="12" name="id">
+    <column id="27" parent="13" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>12849031</StateNumber>
       <DefaultExpression>nextval(&apos;list_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="27" parent="12" name="name">
+    <column id="28" parent="13" name="name">
       <Position>2</Position>
       <DataType>varchar(250)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>7288503</StateNumber>
     </column>
-    <index id="28" parent="12" name="list_pkey">
+    <index id="29" parent="13" name="list_pkey">
       <ObjectId>15629340</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="29" parent="12" name="list_pkey">
+    <key id="30" parent="13" name="list_pkey">
       <ObjectId>15629341</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>list_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="30" parent="13" name="id">
+    <column id="31" parent="14" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>7288531</StateNumber>
     </column>
-    <column id="31" parent="13" name="name">
+    <column id="32" parent="14" name="name">
       <Position>2</Position>
       <DataType>varchar(250)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>7288531</StateNumber>
     </column>
-    <index id="32" parent="13" name="priority_pkey">
+    <index id="33" parent="14" name="priority_pkey">
       <ObjectId>10592493</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="33" parent="13" name="priority_pkey">
+    <key id="34" parent="14" name="priority_pkey">
       <ObjectId>10592494</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>priority_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="34" parent="14" name="id">
+    <column id="35" parent="15" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -173,36 +179,36 @@
       <SequenceName>user_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;user_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="35" parent="14" name="name">
+    <column id="36" parent="15" name="name">
       <Position>2</Position>
       <DataType>varchar(250)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>10647471</StateNumber>
     </column>
-    <column id="36" parent="14" name="surname">
+    <column id="37" parent="15" name="surname">
       <Position>3</Position>
       <DataType>varchar(250)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>10647471</StateNumber>
     </column>
-    <column id="37" parent="14" name="email">
+    <column id="38" parent="15" name="email">
       <Position>4</Position>
       <DataType>varchar(300)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>10647471</StateNumber>
     </column>
-    <column id="38" parent="14" name="password">
+    <column id="39" parent="15" name="password">
       <Position>5</Position>
       <DataType>varchar(500)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>10647471</StateNumber>
     </column>
-    <index id="39" parent="14" name="user_pkey">
+    <index id="40" parent="15" name="user_pkey">
       <ObjectId>15488649</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="40" parent="14" name="user_pkey">
+    <key id="41" parent="15" name="user_pkey">
       <ObjectId>15488650</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_pkey</UnderlyingIndexName>
