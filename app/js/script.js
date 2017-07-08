@@ -5,7 +5,6 @@ $(document).ready(function() {
 		autoclose: true
 	});
 
-
 	// function fullHeight(){
 	//     $('.block-left').css({
 	//         height: $(window).height() + 'px'

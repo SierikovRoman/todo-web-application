@@ -23,6 +23,8 @@
     <script src="app/libs/angular/angular.js"></script>
     <script src="app/libs/angular/angular-route.min.js"></script>
     <script src="app/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="app/libs/hammer/hammer.min.js"></script>
+    <!-- <script src="app/libs/hammer/jquery.hammer.js"></script> -->
 
     <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 

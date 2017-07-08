@@ -123,14 +123,6 @@ input {
   padding: 0 !important;
 }
 
-.todo-card {
-  width: 100%;
-  height: 80px;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid black;
-}
-
 .main {
   width: 80%;
   height: 80px;
@@ -170,6 +162,7 @@ input {
   height: 80px;
   float: left;
   padding: 0;
+  position: relative;
 }
 
 .tag {
@@ -409,7 +402,7 @@ input {
 .mobile-list {
   width: 100%;
   position: absolute;
-  top: 65px;
+  top: 60px;
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -471,7 +464,14 @@ input {
 }
 
 .s {
-  padding: 6px 5px;
+  padding: 6px 10px;
+  height: 50px;
+  font-size: 18px;
+}
+
+.search-todo {
+  width: 100%;
+  height: 50px;
 }
 
 .cbt {
@@ -564,7 +564,7 @@ input {
   border: none !important;
 }
 
-.date {
+.n-date {
   text-align: center;
   padding: 10px 0 0 0 !important;
 }
