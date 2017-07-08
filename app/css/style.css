@@ -54,75 +54,7 @@ input {
           border-radius: none !important;
 }
 
-.nav-desktop {
-  background-color: #3F3830 !important;
-  color: #B0B1A1;
-  z-index: 1;
-  padding: 0 10px 0 10px;
-  border-bottom: 2px solid #0F0D0B;
-}
-
-/* The side navigation menu */
-.sidenav {
-  height: 100%;
-  /* 100% Full-height */
-  width: 0;
-  /* 0 width - change this with JavaScript */
-  position: fixed;
-  /* Stay in place */
-  z-index: 2;
-  /* Stay on top */
-  top: 0;
-  right: 0;
-  background-color: #111;
-  /* Black*/
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 60px;
-  /* Place content 60px from the top */
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.block-left {
-  width: 25%;
-  position: absolute;
-  left: 0;
-  top: 51px;
-  z-index: 0;
-  background-color: #3F3830;
-  color: #FFF;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  padding: 0 !important;
-}
-
+/* Mini todo card */
 .main {
   width: 80%;
   height: 80px;
@@ -222,26 +154,17 @@ input {
 /* The side navigation menu */
 .sidenav-mobile {
   height: 100%;
-  /* 100% Full-height */
   width: 0;
-  /* 0 width - change this with JavaScript */
   position: fixed;
-  /* Stay in place */
   z-index: 2;
-  /* Stay on top */
   top: 0;
   left: 0;
   background-color: #111;
-  /* Black*/
   overflow-x: hidden;
-  /* Disable horizontal scroll */
   overflow-y: scroll;
-  /* Anable vertical scroll */
   padding-top: 60px;
-  /* Place content 60px from the top */
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */

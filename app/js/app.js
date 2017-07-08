@@ -136,12 +136,12 @@
 
 	$scope.openNavigation = function(){
 		document.getElementById("sidenav-mobile").style.width = "250px";
-		document.getElementById("user").style.display = "none";
+		// document.getElementById("user").style.display = "none";
 	};
 
 	$scope.closeNavigation = function(){
 		document.getElementById("sidenav-mobile").style.width = "0";
-		document.getElementById("user").style.display = "block";
+		// document.getElementById("user").style.display = "block";
 	};
 
 	/* Search todo */

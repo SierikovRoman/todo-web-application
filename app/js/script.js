@@ -5,6 +5,26 @@ $(document).ready(function() {
 		autoclose: true
 	});
 
+	var swipe = new Hammer(document);
+	// detect swipe and call to a function
+	swipe.on('swiperight swipeleft', function(e) {
+	  e.preventDefault();
+	  if (e.type == 'swiperight') {
+	    // open menu
+	    $('.sidenav-mobile').animate({
+	      width: "250px",
+	      display: 'block'
+	    });
+	  } else {
+	    // close/hide menu
+	    $('.sidenav-mobile').animate({
+	      width: "0px",
+	      display: 'none'
+	    });
+	  }
+
+	});
+
 	// function fullHeight(){
 	//     $('.block-left').css({
 	//         height: $(window).height() + 'px'
